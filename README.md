@@ -9,6 +9,7 @@
  conda activate MicroKPNN	
  conda install -c conda-forge pytables=3.5
  conda install -c bioconda biom-format
+ conda install networkx
  ```
  
  ### Demo to use the MicroKPNN tool
