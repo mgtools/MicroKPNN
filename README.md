@@ -6,7 +6,7 @@
  ### Installation
  
  
- ### Demo to use the MicroKPNNtool
+ ### Demo to use the MicroKPNN tool
 
  ### Analysis
  
