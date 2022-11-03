@@ -12,6 +12,11 @@
  ```
  
  ### Demo to use the MicroKPNN tool
+ 
+ ```
+ python MicroKPNN.py ExampleDataset/bracken.biom ExampleDataset/Supplementary_Table.csv Obesity output --taxonomy 0 --h 10 --threads 2
+
+ ```
 
  ### Analysis
  
