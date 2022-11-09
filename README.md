@@ -34,5 +34,8 @@
  python accuracy.py <for 1 combination or all combination> <numberofruns> <outputDir>
  ```
  
+ ```
+ python impNodes_boxplot.py output/NetworkDir/kingdom10 output/Results/kingdom10 output/Analysis/ 2
+ ```
  ### Instructions on how to run MicorKPNNs on your data
 Based on our results the combination od genus and ... would be better than the others ...
