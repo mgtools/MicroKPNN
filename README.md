@@ -13,6 +13,9 @@
  conda install -c bioconda biom-format [conda install -c bioconda -c conda-forge biom-format
 ]
  conda install networkx
+ 
+ ###for Analysis part
+ conda install -c anaconda scikit-learn
  ```
  
  ### Demo to use the MicroKPNN tool
