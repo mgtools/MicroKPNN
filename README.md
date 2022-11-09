@@ -4,6 +4,8 @@
  ### System requirements
  
  ### Installation
+ biom :
+  linux-64 v2.1.7
  ```
  conda create -n MicroKPNN python=3.7 tensorflow=1.13 pandas=0.24 numpy=1.16 scipy=1.2 psutil=5.6
  conda activate MicroKPNN	
