@@ -24,8 +24,11 @@
 
  ### Analysis
  depending on the number of runs and weather you wanna run it for 1 run or more than one run 
+ it creates Analaysis dir in your output directory and put the results there. If you run for a single combination you would have a csv file in you Analysis directory which contains one line.
+ If you run it for all the combination then in your Analysis would be contain a csv accuracy_results file that has all the combinations accuracy and also there is a plot directory that shos the comparison of different taxonomy with same pure hidden nodes number and also comparison of different number of pure hidden nodes in one taxonomy    
  ```
  python accuracy.py <for 1 combination or all combination> <numberofruns> <outputDir>
  ```
  
- ### Instructions on how to run KPNNs on your data
+ ### Instructions on how to run MicorKPNNs on your data
+Based on our results the combination od genus and ... would be better than the others ...
