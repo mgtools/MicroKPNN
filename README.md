@@ -16,6 +16,7 @@
  
  ###for Analysis part
  conda install -c anaconda scikit-learn
+ conda install -c conda-forge matplotlib
  ```
  
  ### Demo to use the MicroKPNN tool
