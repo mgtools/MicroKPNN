@@ -23,9 +23,9 @@
  ```
 
  ### Analysis
- 
+ depending on the number of runs and weather you wanna run it for 1 run or more than one run 
  ```
- python <for 1 combination or all combination> <numberofruns> <outputDir>
+ python accuracy.py <for 1 combination or all combination> <numberofruns> <outputDir>
  ```
  
  ### Instructions on how to run KPNNs on your data
