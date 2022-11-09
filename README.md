@@ -24,4 +24,8 @@
 
  ### Analysis
  
+ ```
+ python <for 1 combination or all combination> <numberofruns> <outputDir>
+ ```
+ 
  ### Instructions on how to run KPNNs on your data
