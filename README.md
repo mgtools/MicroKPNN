@@ -85,3 +85,6 @@
  ```
  ### Instructions on how to run MicorKPNNs on your data
 Based on our results the combination od genus and ... would be better than the others ...
+ 
+Mension the difference betwee running on the server with GPU and without GPU
+
