@@ -2,7 +2,7 @@
  knowledge-primed neural network for microbiome-based predictions
  
  ### System requirements
- MicroKPNN was developed on linux and all scripts are in python. 
+ MicroKPNN was developed on Ubunto and all scripts are in python. 
  
  ### Installation
  
