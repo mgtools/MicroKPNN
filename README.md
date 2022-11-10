@@ -86,5 +86,7 @@
  ### Instructions on how to run MicorKPNNs on your data
 Based on our results the combination od genus and ... would be better than the others ...
  
-Mension the difference betwee running on the server with GPU and without GPU
+Mention the difference between running on the server with GPU and without GPU:
+ it takes around 1 hour to run for one combination and also around 40 to 50 hour to run for all combinations
+ 
 
