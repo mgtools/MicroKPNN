@@ -1,7 +1,10 @@
 # MicroKPNN
  knowledge-primed neural network for microbiome-based predictions
  
- The prior-knowledge used in MicroKPNN includes the metabolic activities of different bacterial species, taxonomy level and community information
+ The prior-knowledge used in MicroKPNN includes the metabolic activities of different bacterial species, taxonomy level and community information. The structure of network is as following image:
+ 
+ ![alt text](https://github.com/mgtools/MicroKPNN/edit/main/mics/MicroKPNN_structure-1.jpg)
+ 
  ### System requirements
  MicroKPNN was developed on Ubunto and all scripts are in python. 
  
@@ -34,24 +37,18 @@
  In this repo we have exampleDataset and also it's output in single_output and output directories.
  
  Input for this tool:
- 1. a .biom file (eg. output of kracken bracken) which contains metadate for species (taxonomy level information) and relative abundance. yu can see ExampleDataset/bracken.biom to see how your input should be look like. for more info about biom dataset you can take a look at https://biom-format.org/
+ 1. a .biom file (eg. output of kracken bracken) which contains metadate for species (taxonomy level information) and relative abundance. You can see ExampleDataset/bracken.biom (unzip bracken.biom.tar.gz)to see how your input should be look like. for more info about biom dataset you can take a look at https://biom-format.org/
  2. a .csv file which has corresponding samples in biom file and also a column with head names "Sample Accession or Sample ID" which contain sample ids and a column name "Phenotype" that has phenotype information for each sample. be carefull the healthy ones should be written as "Healthy" (the first character should be capital and the other ones should not be capital) you can see ExampleDataset/Supplementary_Table.csv to see how your input should be look like.
  3. phenotype you want to use. 
- 4. 
+ 
  optional inputs:
  
  4. --taxonomy <number>
- 
      0: kingdom
-     
      1: phylum
-     
      2: class
-     
      3: order
-     
      4: famiy
-     
      5: genus
  
  5. --h <number>: number of pure hidden nodes you want to use 
