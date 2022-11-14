@@ -35,6 +35,7 @@
  
  ```
  git clone https://github.com/mgtools/MicroKPNN.git
+ cd MicroKPNN/
  ```
  ### Demo to use the MicroKPNN tool
  In this repo we have exampleDataset and also it's output in single_output and output directories.
