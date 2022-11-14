@@ -47,7 +47,8 @@
  
  optional inputs:
  
- 4. --taxonomy <number>
+ 4. --taxonomy <number>: 
+ 
      0: kingdom
      1: phylum
      2: class
@@ -62,6 +63,8 @@
  
  single_output version:
  
+ In this version you specify which taxon rank and what number of pure hidden neurons you want use for your interpretable neural netwok. In the following example we use kingodm(0) for taxonomy and 10 nodes for pure hidden nodes. 
+ 
  
  ```
  python MicroKPNN.py ExampleDataset/bracken.biom ExampleDataset/Supplementary_Table.csv Obesity output --taxonomy 0 --h 10 --threads 2
@@ -70,6 +73,13 @@
  
  All combination output version:
  
+ In this version you just run the following command and it produces the results for all combination of all taxonomy ranking and pure hidden nodes that we define as follow:
+ 
+ taxonomy = [kingdom, phylum, class, order, family, genus]
+ 
+ pure hidden nodes number = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+ Therefore in the end, you'll have 60 different output results.
  ```
   python MicroKPNN.py ExampleDataset/bracken.biom ExampleDataset/Supplementary_Table.csv Obesity output --threads 2
  ```
