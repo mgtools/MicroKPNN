@@ -82,7 +82,7 @@
 
  Therefore in the end, you'll have 60 different output results.
  ```
- mkdir single_output
+ mkdir output
  python MicroKPNN.py ExampleDataset/bracken.biom ExampleDataset/Supplementary_Table.csv Obesity output --threads 2
  ```
 
