@@ -3,8 +3,7 @@
  
  The prior-knowledge used in MicroKPNN includes the metabolic activities of different bacterial species, taxonomy level and community information. The structure of network is as following image:
  
- ![alt text](https://github.com/mgtools/MicroKPNN/edit/main/misc/MicroKPNN_structure-1.jpg)
- 
+ ![Alt text]((https://github.com/mgtools/MicroKPNN/edit/main/misc/MicroKPNN_structure-1.jpg "Optional title")
  ### System requirements
  MicroKPNN was developed on Ubunto and all scripts are in python. 
  
