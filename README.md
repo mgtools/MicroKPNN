@@ -61,7 +61,7 @@
  6. --thread <number>: if you don't put any numbers by default it would be 1
 
  
- single_output version:
+ **single_output version:**
  
  In this version you specify which taxon rank and what number of pure hidden neurons you want use for your interpretable neural netwok. In the following example we use kingodm(0) for taxonomy and 10 nodes for pure hidden nodes. 
  
@@ -72,7 +72,7 @@
 
  ```
  
- All combination output version:
+ **All combination output version:**
  
  In this version you just run the following command and it produces the results for all combination of all taxonomy ranking and pure hidden nodes that we define as follow:
  
