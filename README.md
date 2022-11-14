@@ -67,7 +67,8 @@
  
  
  ```
- python MicroKPNN.py ExampleDataset/bracken.biom ExampleDataset/Supplementary_Table.csv Obesity output --taxonomy 0 --h 10 --threads 2
+ mkdir single_output
+ python MicroKPNN.py ExampleDataset/bracken.biom ExampleDataset/Supplementary_Table.csv Obesity single_output --taxonomy 0 --h 10 --threads 2
 
  ```
  
@@ -81,7 +82,8 @@
 
  Therefore in the end, you'll have 60 different output results.
  ```
-  python MicroKPNN.py ExampleDataset/bracken.biom ExampleDataset/Supplementary_Table.csv Obesity output --threads 2
+ mkdir single_output
+ python MicroKPNN.py ExampleDataset/bracken.biom ExampleDataset/Supplementary_Table.csv Obesity output --threads 2
  ```
 
  ### Analysis
