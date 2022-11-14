@@ -1,6 +1,7 @@
 # MicroKPNN
  knowledge-primed neural network for microbiome-based predictions
-+ 
+ 
+ The prior-knowledge used in MicroKPNN includes the metabolic activities of different bacterial species, taxonomy level and community information
  ### System requirements
  MicroKPNN was developed on Ubunto and all scripts are in python. 
  
