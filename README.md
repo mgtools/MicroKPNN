@@ -92,25 +92,30 @@ Depending on the number of combinations and weather you want to have the accurac
 If you run for a single combination you would have a csv file in your Analysis directory which contains one line.
 
 If you run it for all the combination then your Analysis directory would be contain a csv accuracy_results file that has all the combinations accuracy and also there is a plot directory that shows the comparison of different taxonomy with same pure hidden nodes number and also comparison of different number of pure hidden nodes in one taxonomy    
+ 
  ```
  python accuracy.py <for 1 combination or all combination> <number of runs> <outputDir>
  ```
+ 
  <for 1 combination or all combination>: 1 for one combination in your outputDir and 2 for all combinations in you outputDir:
   
   <number of runs>: If you run MicroKPNN more than once you have more than one run results and then you can get the average of them 
   
   Example for one combination:
+   
   ```
   python accuracy.py 1 1 single_output/
   ```
-   Example for all combination and number of runs equal to 2:
-    ```
+   
+  Example for all combination and number of runs equal to 2:
+   
+  ```
   python accuracy.py 1 1 single_output/
   ```
    
  You can also create a plot to see which of the informations in for your dataset in knowledge prior network play an important rule for predicting the phenotype
    
-  ```
+ ```
  python impNodes_boxplot.py <inputNetworkDir> <inputResultDir> <outputDir> <number of runs>
  ```
    
