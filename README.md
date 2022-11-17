@@ -1,5 +1,5 @@
 # MicroKPNN
- knowledge-primed neural network for microbiome-based predictions.
+ knowledge-primed neural network for microbiome-based human host phenotype prediction
  
  The prior-knowledge used in MicroKPNN includes the metabolic activities of different bacterial species, taxonomy level and community information. 
  
@@ -38,7 +38,7 @@
  cd MicroKPNN/
  ```
  ### Demo to use the MicroKPNN tool
- In this repo we have exampleDataset and also it's output in single_output and output directories.
+ In this repo we have exampleDataset and also it's outputs in single_output and output directories.
  
  Input for this tool:
  1. a .biom file (eg. output of kracken bracken) which contains metadate for species (taxonomy level information) and relative abundance. You can see ExampleDataset/bracken.biom (unzip bracken.biom.tar.gz)to see how your input should be look like. for more info about biom dataset you can take a look at https://biom-format.org/
@@ -87,20 +87,22 @@
  ```
 
  ### Analysis
- depending on the number of runs and weather you wanna run it for 1 run or more than one run 
- it creates Analaysis dir in your output directory and put the results there. If you run for a single combination you would have a csv file in you Analysis directory which contains one line.
- If you run it for all the combination then in your Analysis would be contain a csv accuracy_results file that has all the combinations accuracy and also there is a plot directory that shos the comparison of different taxonomy with same pure hidden nodes number and also comparison of different number of pure hidden nodes in one taxonomy    
+Depending on the number of combinations and weather you want to have the accuracy for 1 run or more than one runs and their average accuracy, it creates Analaysis dir in your output directory and put the results there. 
+
+If you run for a single combination you would have a csv file in your Analysis directory which contains one line.
+
+If you run it for all the combination then your Analysis directory would be contain a csv accuracy_results file that has all the combinations accuracy and also there is a plot directory that shows the comparison of different taxonomy with same pure hidden nodes number and also comparison of different number of pure hidden nodes in one taxonomy    
  ```
  python accuracy.py <for 1 combination or all combination> <numberofruns> <outputDir>
  ```
- 
+ You can also create a plot to see which of the informations in for your dataset in knwledge prior network play an important rule for predicting the phenotype
  ```
  python impNodes_boxplot.py output/NetworkDir/kingdom10 output/Results/kingdom10 output/Analysis/ 2
  ```
  ### Instructions on how to run MicorKPNNs on your data
-Based on our results the combination od genus and ... would be better than the others ...
+Based on our results the genus rank mostly give better results than the others
  
 Mention the difference between running on the server with GPU and without GPU:
- it takes around 1 hour to run for one combination and also around 40 to 50 hour to run for all combinations
+ it takes around 1 hour to run for one combination and also around 40 to 50 hour to run for all combinations if you use GPU
  
 
