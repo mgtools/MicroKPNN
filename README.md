@@ -1,5 +1,5 @@
 # MicroKPNN
- Knowledge-primed neural network for microbiome-based human host phenotype prediction
+ MicroKPNN is a knowledge-primed neural network for microbiome-based human host phenotype prediction.
  
  The prior-knowledge used in MicroKPNN includes the metabolic activities of different bacterial species, phylogenetic relationship and bacterial community information. 
  
@@ -13,7 +13,7 @@
  
  ### Installation
  
- first you have to create a conda environment and install the required packages as following:
+ First you have to create a conda environment and install the required packages as following:
 
  ```
  conda create -n MicroKPNN python=3.7 tensorflow=1.13 pandas=0.24 numpy=1.16 scipy=1.2 psutil=5.6
