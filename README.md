@@ -1,9 +1,9 @@
 # MicroKPNN
- knowledge-primed neural network for microbiome-based human host phenotype prediction
+ Knowledge-primed neural network for microbiome-based human host phenotype prediction
  
- The prior-knowledge used in MicroKPNN includes the metabolic activities of different bacterial species, taxonomy level and community information. 
+ The prior-knowledge used in MicroKPNN includes the metabolic activities of different bacterial species, phylogenetic relationship and bacterial community information. 
  
- The structure of network is as following image:
+ The structure of the neural network is as shown in the figure below: 
  
  <img src="misc/MicroKPNN_structure-1.jpg" alt="Alt text" title="Optional title">
  
@@ -31,23 +31,23 @@
  conda install -c bioconda -c conda-forge biom-format
  ```
  
- Installation instructions::
+ Installation instructions:
  
  ```
  git clone https://github.com/mgtools/MicroKPNN.git
  cd MicroKPNN/
  ```
  ### Demo to use the MicroKPNN tool
- In this repo we have exampleDataset and also it's outputs in single_output and output directories.
+ In this repo we provide example datasets for you to use and their outputs in single_output and output directories.
  
- Input for this tool:
- 1. a .biom file (eg. output of kracken bracken) which contains metadate for species (taxonomy level information) and relative abundance. You can see ExampleDataset/bracken.biom (unzip bracken.biom.tar.gz)to see how your input should be look like. for more info about biom dataset you can take a look at https://biom-format.org/
- 2. a .csv file which has corresponding samples in biom file and also a column with head names "Sample Accession or Sample ID" which contain sample ids and a column name "Phenotype" that has phenotype information for each sample. be carefull the healthy ones should be written as "Healthy" (the first character should be capital and the other ones should not be capital) you can see ExampleDataset/Supplementary_Table.csv to see how your input should be look like.
- 3. phenotype you want to use. 
+ Required inputs for this tool:
+ 1. A .biom file (eg. output of kracken bracken) which contains species (with taxonomic assignment) and their relative abundances across the samples. You can see ExampleDataset/bracken.biom (unzip bracken.biom.tar.gz) to see how your input should look like. For more info about biom dataset, you can check out https://biom-format.org/.
+ 2. A .csv file with metadata information of the samples. It has a column called "Sample Accession or Sample ID" for sample ids, and a column called "Phenotype" that has phenotype information for each sample. The healthy samples should be labeled as "Healthy" (with capital H). Here is a sample file:   ExampleDataset/Supplementary_Table.csv.
+ 3. The phenotype you want to use. 
  
- optional inputs:
+ Optional inputs:
  
- 4. --taxonomy <number>: 
+ 4. --taxonomy <number>
  
      0: kingdom
      1: phylum
@@ -56,14 +56,14 @@
      4: famiy
      5: genus
  
- 5. --h <number>: number of pure hidden nodes you want to use 
+ 5. --h <number>: the number of unknown hidden nodes you want to use in the hidden layer
  
- 6. --thread <number>: if you don't put any numbers by default it would be 1
+ 6. --thread <number>: the default is 1
 
  
- **single_output version:**
+ **Single output version:**
  
- In this version you specify which taxon rank and what number of pure hidden neurons you want use for your interpretable neural netwok. In the following example we use kingodm(0) for taxonomy and 10 nodes for pure hidden nodes. 
+ In this version you specify which taxonomic rank and what number of unknown hidden neurons you want to use for your interpretable neural netwok. In the following example we use kingodm(0) and 10 unknown hidden nodes. 
  
  
  ```
@@ -74,11 +74,11 @@
  
  **All combination output version:**
  
- In this version you just run the following command and it produces the results for all combination of all taxonomy ranking and pure hidden nodes that we define as follow:
+ In this version you just run the following command and it produces the results for all combinations of all taxonomic ranks and unknown hidden nodes that we define as follow:
  
  taxonomy = [kingdom, phylum, class, order, family, genus]
  
- pure hidden nodes number = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+ unknown hidden nodes number = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
  Therefore in the end, you'll have 60 different output results.
  ```
@@ -87,11 +87,11 @@
  ```
 
  ### Analysis
-Depending on the number of combinations and weather you want to have the accuracy for 1 run or more than one runs and their average accuracy, it creates Analaysis dir in your output directory and put the results there. 
+Depending on the number of combinations and weather you want to have the accuracy for one run or average acccuracy of multiple runs, it creates Analaysis dir in your output directory and puts the results there. 
 
 If you run for a single combination you would have a csv file in your Analysis directory which contains one line.
 
-If you run it for all the combination then your Analysis directory would be contain a csv accuracy_results file that has all the combinations accuracy and also there is a plot directory that shows the comparison of different taxonomy with same pure hidden nodes number and also comparison of different number of pure hidden nodes in one taxonomy    
+If you run it for all the combinations then your Analysis directory would contain a csv file with results for all the combinations and also there is a plot directory containing plots showing the comparison of different taxonomy with the same number of hidden nodes number, and comparison of different numbers of unknown hidden nodes using the same taxonomic rank.    
  
  ```
  python accuracy.py <for 1 combination or all combination> <number of runs> <outputDir>
@@ -113,7 +113,7 @@ If you run it for all the combination then your Analysis directory would be cont
   python accuracy.py 1 1 single_output/
   ```
    
- You can also create a plot to see which of the informations in for your dataset in knowledge prior network play an important rule for predicting the phenotype
+ You can also create a plot to see which of the hidden nodes play an important role for predicting the phenotype.
    
  ```
  python impNodes_boxplot.py <inputNetworkDir> <inputResultDir> <outputDir> <number of runs>
@@ -125,7 +125,7 @@ If you run it for all the combination then your Analysis directory would be cont
    
   <outputDir>: path to directory wants the results saved
   
-  <number of runs>: If you run MicroKPNN more than once you have more than one run results and then you can get the average of them
+  <number of runs>: If you run MicroKPNN more than once you have more than one results and then you can get the average of them
    
    
  Example: 
@@ -134,9 +134,8 @@ If you run it for all the combination then your Analysis directory would be cont
  python impNodes_boxplot.py output/NetworkDir/kingdom10 output/Results/kingdom10 output/Analysis/ 2
  ```
  ### Instructions on how to run MicorKPNNs on your data
-Based on our results the genus rank mostly give better results than the others
+Based on our results the genus rank generally gives good results. If you don't want to try all combinations of the hyperameters (taxonomic rank and number of unknown hidden node) to find the best one you may go with genus.  
  
-Mention the difference between running on the server with GPU and without GPU:
- it takes around 1 hour to run for one combination and also around 40 to 50 hour to run for all combinations if you use GPU
+Runtime: If you use a computer with GPUs, it does help. It takes about 1 hour to run for one combination, and it may take up to 40 to 50 hour to run for all combinations if you use GPU. 
  
 
