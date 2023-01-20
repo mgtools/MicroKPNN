@@ -5,7 +5,7 @@
  
  The structure of the neural network is as shown in the figure below: 
  
- <img src="misc/MicroKPNN_structure-1.jpg" alt="Alt text" title="Optional title">
+ <img src="misc/MicroKPNN_structure.jpg" alt="Alt text" title="Optional title">
  
  ### System requirements
  
