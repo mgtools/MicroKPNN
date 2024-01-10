@@ -139,7 +139,7 @@ Based on our results the genus rank and 100 fully-connected hidden nodes general
 
  ```
  mkdir genus100_output
- python MicroKPNN.py ExampleDataset/bracken.biom ExampleDataset/Supplementary_Table.csv Obesity single_output --taxonomy 5 --h 100 --threads 2
+ python MicroKPNN.py ExampleDataset/bracken.biom ExampleDataset/Supplementary_Table.csv Obesity genus100_output --taxonomy 5 --h 100 --threads 2
 
  ```
 
