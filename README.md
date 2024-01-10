@@ -1,5 +1,5 @@
 # MicroKPNN
- MicroKPNN a knowledge-primed neural network for microbiome-based human host phenotype prediction.
+ MicroKPNN is a knowledge-primed neural network for microbiome-based human host phenotype prediction.
  
  The prior-knowledge used in MicroKPNN includes the metabolic activities of different bacterial species, phylogenetic relationship and bacterial community information. 
  

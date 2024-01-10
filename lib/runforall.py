@@ -10,6 +10,9 @@ import sys
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--inp', type=str, required=True)
+parser.add_argument('--alpha', type=str, required=True)
+parser.add_argument('--lambd', type=str, required=True)
+parser.add_argument('--dropOut', type=str, required=True)
 args = parser.parse_args()
 
 
@@ -24,7 +27,7 @@ for t in taxa:
         edges= args.inp+"/NetworkInput/" + t + n + "/EdgeList.csv"
         print(edges)
         outPath=args.inp + "/Results/" + t + n
-        cmd = "python lib/KPNN_Function.py --alpha=0.001 --lambd=0.2 " + data + " " + edges + " " + classLabels + " " +outPath
+        cmd = "python lib/KPNN_Function.py --alpha="+args.alpha+" --lambd="+args.lambd+" --dropOut="+args.dropOut+" "+ data + " " + edges + " " + classLabels + " " +outPath
         subprocess.check_output(cmd, shell=True)
         print(t + n)
 

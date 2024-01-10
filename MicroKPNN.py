@@ -15,6 +15,11 @@ parser.add_argument('diseaseName', type=str, help='name of the phenotype')
 parser.add_argument('outputDir', type=str, help='path to output folder (must exist)')
 parser.add_argument('--taxonomy', type=int, help='number corresponding to the taxonomy', default = -1) 
 parser.add_argument('--h', type=int, help='number corresponding to the number of pure hidden nodes', default = -1)
+# Dropout
+
+parser.add_argument('--dropOut', type=float, help="Dropout Keep Probability Nodes", default=1.0)
+parser.add_argument('--alpha', type=float, help='learning rate alpha', default=0.1)
+parser.add_argument('--lambd', type=float, help='regularization lambda for l2 loss', default=0.0)
 
 # Computing limits
 parser.add_argument('--threads', type=int, help="Parallelization number of thread", default=1)
@@ -41,7 +46,7 @@ if args.taxonomy == -1 or args.h==-1:
         cmd = f"python lib/create_edges.py --inp {args.inputBiomData} --out {args.outputDir}"
         check_result=subprocess.check_output(cmd, shell=True)
     print("All edges has been created/checked")
-    cmd = f"python lib/runforall.py --inp {args.outputDir}"
+    cmd = f"python lib/runforall.py --inp {args.outputDir} --alpha {args.alpha} --lambd {args.lambd} --dropOut {args.dropOut}"
     check_result=subprocess.check_output(cmd, shell=True)
 else:
     cmd = f"python lib/edges.py --inp {args.inputBiomData} --taxonomy {args.taxonomy} --h {args.h} --out {args.outputDir}/NetworkInput"
@@ -51,7 +56,7 @@ else:
     classLabels=args.outputDir+"/NetworkInput/ClassLabels.csv"
     edges= args.outputDir+"/NetworkInput/EdgeList.csv"
     outPath=args.outputDir + "/Results/"
-    cmd = "python lib/KPNN_Function.py --alpha=0.001 --lambd=0.2 " + data + " " + edges + " " + classLabels + " " +outPath
+    cmd = "python lib/KPNN_Function.py --alpha="+str(args.alpha)+" --lambd="+str(args.lambd)+" --dropOut="+str(args.dropOut)+" " + data + " " + edges + " " + classLabels + " " +outPath
     check_result=subprocess.check_output(cmd, shell=True)
 print("Well Done")
 
