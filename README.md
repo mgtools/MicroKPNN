@@ -134,8 +134,15 @@ If you run it for all the combinations then your Analysis directory would contai
  python impNodes_boxplot.py output/NetworkDir/kingdom10 output/Results/kingdom10 output/Analysis/ 2
  ```
  ### Instructions on how to run MicorKPNNs on your data
-Based on our results the genus rank generally gives good results. If you don't want to try all combinations of the hyperameters (taxonomic rank and number of unknown hidden node) to find the best one you may go with genus.  
- 
+Based on our results the genus rank and 100 fully-connected hidden nodes generally give good results. If you don't want to try all combinations of the hyperameters (taxonomic rank and the number of fully-connected hidden nodes) to find the best one you may go with genus100.
+
+
+ ```
+ mkdir genus100_output
+ python MicroKPNN.py ExampleDataset/bracken.biom ExampleDataset/Supplementary_Table.csv Obesity single_output --taxonomy 5 --h 100 --threads 2
+
+ ```
+
 Runtime: If you use a computer with GPUs, it does help. It takes about 1 hour to run for one combination, and it may take up to 40 to 50 hour to run for all combinations if you use GPU. 
  
 
